@@ -17,6 +17,6 @@ export const ShowInput = styled.button`
   background: #242937;
   border-radius: 48%;
   color: #fff;
-  padding: 10px;
+  padding: ${({ theme }) => theme.spaces.s}px;
   cursor: pointer;
 `;

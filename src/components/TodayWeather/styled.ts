@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TodayWeatherLayout = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spaces.s}px;
-  margin: 0 30px 0 0;
+  margin: 0 ${({ theme }) => theme.m}px 0 0;
 `;
 
 export const TodayIcon = styled.img`

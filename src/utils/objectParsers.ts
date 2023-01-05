@@ -13,10 +13,10 @@ export const parseObjectFromVisualCrossing = (
   for (const item of days) {
     const { temp, icon, hours } = item;
     const tempHours: visualCrossingHour[] = [];
-    // for (const hour of hours) {
-    //     const { temp, feelslike, icon } = hour;
-    //     tempHours.push({ temp, feelslike, icon });
-    //   }
+    for (const hour of hours) {
+      const { temp, feelslike, icon } = hour;
+      tempHours.push({ temp, feelslike, icon });
+    }
     const tempObj: visualCrossingDay = { temp, icon, hours: tempHours };
     resDays.push(tempObj);
   }

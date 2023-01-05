@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin: ${({ theme }) => theme.spaces.m}px auto;
   box-shadow: 24px 24px 24px 0px #0e1014;
   max-width: ${({ theme }) => theme.width.m}vw;
-  min-height: ${({ theme }) => theme.height.x}vh;
+  min-height: ${({ theme }) => theme.height.i}vh;
   background: url(${({ theme }) => theme.sunny});
   background-size: cover;
   background-repeat: no-repeat;

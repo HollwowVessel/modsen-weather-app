@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const FixedBox = styled.div`
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: ${({ theme }) => theme.width.x}vw;
+  height: ${({ theme }) => theme.width.x}vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,8 +16,8 @@ export const FixedBox = styled.div`
 
 export const TownInputContainer = styled.div`
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: ${({ theme }) => theme.width.xxl}px;
+  height: ${({ theme }) => theme.height.xxl}px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,11 +29,11 @@ export const TownInputContainer = styled.div`
 `;
 
 export const Town = styled.input`
-  padding: 10px;
+  padding: ${({ theme }) => theme.spaces.s}px;
   outline: none;
   border: none;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.fonts.s}px;
   opacity: 0.8;
   transition: 0.8s;
   &:focus,
@@ -41,22 +41,22 @@ export const Town = styled.input`
   &:active {
     opacity: 1;
   }
-  margin: 0 0 64px 0;
+  margin: 0 0 ${({ theme }) => theme.spaces.x}px 0;
 `;
 
 export const TownHeading = styled.h3`
   opacity: 1;
-  font-size: 64px;
-  margin: 0 0 64px 0;
+  font-size: ${({ theme }) => theme.fonts.xxl}px;
+  margin: 0 0 ${({ theme }) => theme.spaces.x}px 0;
 `;
 
 export const TownButton = styled.button`
-  padding: 10px;
+  padding: ${({ theme }) => theme.spaces.s}px;
   outline: none;
   border: 2px solid #fff;
   color: #fff;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.fonts.s}px;
   background: none;
   opacity: 0.6;
   transition: 0.8s;
@@ -66,5 +66,5 @@ export const TownButton = styled.button`
     background: #111;
     opacity: 1;
   }
-  margin: 0 0 64px 0;
+  margin: 0 0 ${({ theme }) => theme.spaces.x}px 0;
 `;

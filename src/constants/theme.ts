@@ -6,9 +6,9 @@ const spaces = {
   x: 48,
   xl: 96,
 };
-const fonts = { s: 24, l: 32, m: 40, x: 48, xl: 56 };
-const width = { s: 24, l: 32, i: 64, m: 72, x: 100, xl: 128 };
-const height = { s: 24, l: 32, i: 64, m: 72, x: 80, xl: 128 };
+const fonts = { s: 24, l: 32, m: 40, x: 48, xl: 56, xxl: 64 };
+const width = { s: 24, l: 32, m: 72, x: 100, xl: 128, xxl: 500 };
+const height = { s: 24, l: 32, m: 72, i: 80, x: 100, xl: 128, xxl: 500 };
 const weatherType = {
   rainy: 'https://backlightblog.com/images/2021/11/rain-photography-header.jpg',
   sunny:
