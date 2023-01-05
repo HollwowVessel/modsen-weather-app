@@ -95,5 +95,6 @@ module.exports = {
     'import/no-cycle': 0,
     'react-hooks/exhaustive-deps': ['warn'],
     'react/react-in-jsx-scope': 0,
+    'default-param-last': 0,
   },
 };

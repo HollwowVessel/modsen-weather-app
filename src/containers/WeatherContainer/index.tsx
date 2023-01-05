@@ -1,15 +1,11 @@
-import { InfoLayout } from 'components/DateLayout';
-import TownInput from 'components/TownInput';
 import { WeatherMenu } from 'components/WeatherMenu';
+import { InfoContainer } from 'containers/InfoContainer';
 import { Container, Layout } from './styled';
 
 export function WeatherContainer() {
   return (
     <Container>
-      <Layout>
-        <InfoLayout />
-        <TownInput />
-      </Layout>
+      <InfoContainer />
       <WeatherMenu />
     </Container>
   );

@@ -10,5 +10,8 @@ export const GlobalStyles = createGlobalStyle`
     body{
         overflow: hidden;
         color: #fff;
+        background: #1b1e27;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 `;

@@ -5,12 +5,10 @@ import { ThemeProvider } from 'styled-components';
 
 function App() {
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <WeatherContainer />
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <WeatherContainer />
+    </ThemeProvider>
   );
 }
 

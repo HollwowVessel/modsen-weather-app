@@ -1,0 +1,2 @@
+export const GET_WEEK_WEATHER = 'GET_WEEK_WEATHER';
+export const SET_WEEK_WEATHER = 'SET_WEEK_WEATHER';

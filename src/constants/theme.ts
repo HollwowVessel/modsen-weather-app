@@ -6,8 +6,15 @@ const spaces = {
   x: 48,
   xl: 96,
 };
-const fonts = { s: 16, l: 24, m: 32, x: 40, xl: 48 };
-const width = { s: 24, l: 32, m: 70, x: 100 };
-const height = { s: 24, l: 32, x: 80 };
+const fonts = { s: 24, l: 32, m: 40, x: 48, xl: 56 };
+const width = { s: 24, l: 32, i: 64, m: 72, x: 100, xl: 128 };
+const height = { s: 24, l: 32, i: 64, m: 72, x: 80, xl: 128 };
+const weatherType = {
+  rainy: 'https://backlightblog.com/images/2021/11/rain-photography-header.jpg',
+  sunny:
+    'https://i2-prod.examinerlive.co.uk/incoming/article10372520.ece/ALTERNATES/s1227b/JS75768352.jpg',
+  snowy:
+    'https://media.cnn.com/api/v1/images/stellar/prod/190827143018-01-snowy-weather-file.jpg?q=w_4713,h_2786,x_0,y_0,c_fill',
+};
 
-export const theme = { spaces, fonts, width, height };
+export const theme = { spaces, fonts, width, height, ...weatherType };

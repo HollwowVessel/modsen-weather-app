@@ -1,11 +1,70 @@
 import styled from 'styled-components';
 
-export const Town = styled.h2`
-  font-size: ${({ theme }) => theme.fonts.m}px;
-  margin: 0 0 ${({ theme }) => theme.spaces.m}px 0;
+export const FixedBox = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+
+  z-index: 2;
 `;
 
-export const Country = styled.h3`
-  font-size: ${({ theme }) => theme.fonts.l}px;
-  margin: 0 0 ${({ theme }) => theme.spaces.m}px 0;
+export const TownInputContainer = styled.div`
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #242937;
+  opacity: 0.8;
+  border-radius: 5% 20% 5% 20%;
+  z-index: 3;
+`;
+
+export const Town = styled.input`
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  opacity: 0.8;
+  transition: 0.8s;
+  &:focus,
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
+  margin: 0 0 64px 0;
+`;
+
+export const TownHeading = styled.h3`
+  opacity: 1;
+  font-size: 64px;
+  margin: 0 0 64px 0;
+`;
+
+export const TownButton = styled.button`
+  padding: 10px;
+  outline: none;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 24px;
+  background: none;
+  opacity: 0.6;
+  transition: 0.8s;
+  &:focus,
+  &:hover,
+  &:active {
+    background: #111;
+    opacity: 1;
+  }
+  margin: 0 0 64px 0;
 `;
