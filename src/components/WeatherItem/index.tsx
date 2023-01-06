@@ -1,5 +1,3 @@
-import { getDayOfWeek } from 'utils/getDayOfWeek';
-import { getIconType } from 'utils/getIconType';
 import {
   DailyIcon,
   DailyTemperature,
@@ -11,8 +9,8 @@ import { WeatherItemProps } from './types';
 export default function WeatherItem({ icon, temp, day }: WeatherItemProps) {
   return (
     <ItemContainer>
-      <DayOfWeek>{getDayOfWeek(day)}</DayOfWeek>
-      <DailyIcon src={getIconType(icon)} />
+      <DayOfWeek>{day}</DayOfWeek>
+      <DailyIcon src={icon} />
       <DailyTemperature>{Math?.trunc(temp)}°</DailyTemperature>
     </ItemContainer>
   );

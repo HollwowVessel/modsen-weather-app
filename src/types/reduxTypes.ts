@@ -1,3 +1,4 @@
+import { DailyWeather } from './openWeatherTypes';
 import { visualCrossingData } from './visualCrossingTypes';
 
 export type ActionType = {
@@ -7,5 +8,5 @@ export type ActionType = {
 
 export interface WeekWeatherState {
   visualCrossingWeather: visualCrossingData;
-  openWeather: unknown[];
+  openWeather: DailyWeather;
 }

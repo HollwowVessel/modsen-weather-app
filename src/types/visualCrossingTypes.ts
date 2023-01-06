@@ -8,7 +8,6 @@ export type visualCrossingHour = {
 export type visualCrossingDay = {
   temp: number;
   icon: string;
-
   [key: string]: unknown;
 };
 

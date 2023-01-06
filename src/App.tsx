@@ -10,10 +10,12 @@ import { getCityName } from 'store/actionCreators';
 function App() {
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
+
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     getLocationOfUser(setLat, setLon);
-    if (lat ?? lon) {
+    if (lat || lon) {
       dispatch(getCityName({ lat, lon }));
     }
   }, [lat, lon]);

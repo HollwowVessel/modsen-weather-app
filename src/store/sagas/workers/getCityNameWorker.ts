@@ -1,8 +1,10 @@
 import { getCityNameApi } from 'api/getCityNameApi';
+import { getDailyWeatherApi } from 'api/getDailyWeatherApi';
 import { getWeekWeatherApi } from 'api/getWeekWeatherApi';
-import { call, put } from 'redux-saga/effects';
-import { setWeekWeather } from 'store/actionCreators';
+import { call, put, spawn } from 'redux-saga/effects';
+import { setDailyWeather, setWeekWeather } from 'store/actionCreators';
 import {
+  DailyWeather,
   ReverseGeocodingCoords,
   ReverseGeocodingType,
 } from 'types/openWeatherTypes';
@@ -14,12 +16,18 @@ export function* getCityNameWorker({ payload }: ActionType) {
     const coords = payload as ReverseGeocodingCoords;
 
     const data: ReverseGeocodingType = yield call(getCityNameApi, coords);
-    const res: visualCrossingData = yield call(
+
+    const name = data.name;
+
+    const visualCrossingRes: visualCrossingData = yield call(
       getWeekWeatherApi,
-      data.name as string
+      name
     );
 
-    yield put(setWeekWeather(res as visualCrossingData));
+    const openWeatherRes: DailyWeather = yield call(getDailyWeatherApi, name);
+
+    yield put(setWeekWeather(visualCrossingRes));
+    yield put(setDailyWeather(openWeatherRes));
   } catch {
     console.log('Error');
   }

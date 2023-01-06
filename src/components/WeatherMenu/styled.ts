@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavItemProps } from 'types/styledComponents';
 
 export const WeatherInfo = styled.section`
   display: flex;
@@ -23,9 +24,9 @@ export const Nav = styled.ul`
   margin: 0 0 20px 0;
 `;
 
-export const NavItem = styled.li`
+export const NavItem = styled.li<Pick<NavItemProps, 'background'>>`
   padding: 10px;
   border: 2px solid #202531;
-  background: #202531;
+  background: ${({ background }) => background};
   cursor: pointer;
 `;

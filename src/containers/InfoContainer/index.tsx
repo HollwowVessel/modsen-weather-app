@@ -1,4 +1,4 @@
-import { InfoLayout } from 'components/DateLayout';
+import { InfoLayout } from 'components/InfoLayout';
 import TownInfo from 'components/TownInfo';
 import { Layout } from './styled';
 

@@ -1,83 +1,82 @@
+import { DailyWeather } from 'types/openWeatherTypes';
 import { visualCrossingData } from 'types/visualCrossingTypes';
 
-export const mockWeather: visualCrossingData = {
+export const mockWeatherDaily: visualCrossingData = {
   resolvedAddress: 'Витебск, Витебская область, Беларусь',
   address: 'Витебск',
   days: [
     {
       temp: -2.7,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -13.4,
       icon: 'partly-cloudy-day',
-      hours: [],
     },
     {
       temp: -15,
       icon: 'partly-cloudy-day',
-      hours: [],
     },
     {
       temp: -13.7,
       icon: 'partly-cloudy-day',
-      hours: [],
     },
     {
       temp: -10,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -5.4,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -4.3,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -4.9,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -4.9,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: 0.8,
       icon: 'cloudy',
-      hours: [],
     },
     {
       temp: -2,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -5.2,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -7.8,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -9.6,
       icon: 'snow',
-      hours: [],
     },
     {
       temp: -11.9,
       icon: 'snow',
-      hours: [],
     },
+  ],
+};
+
+export const mockWeatherHourly: DailyWeather = {
+  name: 'Vitebsk',
+  days: [
+    { temp: -14.59, icon: '02n' },
+    { temp: -14.75, icon: '02n' },
+    { temp: -15.2, icon: '02n' },
+    { temp: -15.75, icon: '02n' },
+    { temp: -16.04, icon: '03n' },
+    { temp: -15.25, icon: '04n' },
+    { temp: -13.73, icon: '04d' },
   ],
 };

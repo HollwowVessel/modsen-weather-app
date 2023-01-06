@@ -7,8 +7,8 @@ export function InfoLayout() {
     <Layout>
       <WeatherDate />
       <CalendarList>
-        {calendarItems.map(({ time, text }) => (
-          <CalendarItem>
+        {calendarItems.map(({ time, text }, id) => (
+          <CalendarItem key={id}>
             <Time>{time}</Time> {text}
           </CalendarItem>
         ))}

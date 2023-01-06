@@ -1,6 +1,6 @@
 import { useAppSelector } from 'store';
 import { weekWeatherSelector } from 'store/selectors';
-import { getIconType } from 'utils/getIconType';
+import { getIconTypeVisualCrossing } from 'utils/getIconType';
 
 import {
   Today,
@@ -17,7 +17,7 @@ export default function TodayWeather() {
 
   return (
     <TodayWeatherLayout>
-      <TodayIcon src={getIconType(icon)} />
+      <TodayIcon src={getIconTypeVisualCrossing(icon)} />
       <TodayInfo>
         <Today>TODAY</Today>
         <TodayTemperature>{Math.trunc(temp)}°</TodayTemperature>

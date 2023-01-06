@@ -1,8 +1,7 @@
-import { DailyWeather, ListItem } from 'types/openWeatherTypes';
+import { DailyTown, DailyWeather, ListItem } from 'types/openWeatherTypes';
 import {
   visualCrossingData,
   visualCrossingDay,
-  visualCrossingHour,
 } from 'types/visualCrossingTypes';
 
 export const parseObjectFromVisualCrossing = (
@@ -22,16 +21,19 @@ export const parseObjectFromVisualCrossing = (
 
 export const parseObjectFromOpenWeather = (obj: DailyWeather) => {
   const resList: ListItem[] = [];
-  const town = (obj.city as any).name as string;
-
+  const town = (obj.city as DailyTown).name as string;
+  if (!obj?.list) return;
   for (const item of obj.list) {
     const tempItem: ListItem = { temp: 0, icon: '' };
-    tempItem.temp = (item.main as any).temp;
-    tempItem.icon = (item.weather as any).icon as string;
+    if (item.main && item.weather) {
+      tempItem.temp = item.main.temp;
+      tempItem.icon = item.weather[0].icon;
+    }
+
     resList.push(tempItem);
   }
-  const res: DailyWeather = { list: [], name: '' };
-  res.list = resList;
+  const res: DailyWeather = { days: [], name: '' };
+  res.days = resList;
   res.name = town;
 
   return res;

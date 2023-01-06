@@ -11,11 +11,23 @@ export interface ReverseGeocodingType {
 export interface ListItem {
   temp: number;
   icon: string;
+  main?: {
+    temp: number;
+  };
+  weather?: {
+    icon: string;
+  }[];
   [key: string]: unknown;
 }
 
 export interface DailyWeather {
-  list: ListItem[];
+  days: ListItem[];
   name: string;
+  list?: ListItem[];
+  [key: string]: unknown;
+}
+
+export interface DailyTown {
+  city: string;
   [key: string]: unknown;
 }
