@@ -1,10 +1,12 @@
 import WeatherItem from 'components/WeatherItem';
-import { visualCrossingDay } from 'types/vissualCrossing';
-import { useSelector } from 'react-redux';
+import { visualCrossingDay } from 'types/visualCrossingTypes';
+
+import { weekWeatherSelector } from 'store/selectors';
+import { useAppSelector } from 'store';
 import { WeatherItems } from './styled';
 
-export default function WeatherList() {
-  const { days } = useSelector((state) => state.weekWeather.weather);
+export default function WeatherList({ type }: { type: number }) {
+  const { days } = useAppSelector(weekWeatherSelector);
 
   return (
     <WeatherItems>

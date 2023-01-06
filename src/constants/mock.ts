@@ -1,4 +1,4 @@
-import { visualCrossingData } from 'types/vissualCrossing';
+import { visualCrossingData } from 'types/visualCrossingTypes';
 
 export const mockWeather: visualCrossingData = {
   resolvedAddress: 'Витебск, Витебская область, Беларусь',

@@ -13,3 +13,19 @@ export const WeatherInfo = styled.section`
   opacity: 0.95;
   background: #31394b;
 `;
+
+export const Nav = styled.ul`
+  position: absolute;
+  display: flex;
+  list-style-type: none;
+  top: 10px;
+  left: 20px;
+  margin: 0 0 20px 0;
+`;
+
+export const NavItem = styled.li`
+  padding: 10px;
+  border: 2px solid #202531;
+  background: #202531;
+  cursor: pointer;
+`;

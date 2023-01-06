@@ -2,19 +2,19 @@ export type visualCrossingHour = {
   temp: number;
   feelslike: number;
   icon: string;
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 export type visualCrossingDay = {
   temp: number;
   icon: string;
-  hours: visualCrossingHour[];
-  [key: string]: any;
+
+  [key: string]: unknown;
 };
 
 export type visualCrossingData = {
   resolvedAddress: string;
   address: string;
   days: visualCrossingDay[];
-  [key: string]: any;
+  [key: string]: unknown;
 };

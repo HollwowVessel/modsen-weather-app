@@ -1,4 +1,3 @@
-import React from 'react';
 import { WeatherDate } from 'components/WeatherDate';
 import { calendarItems } from 'constants/calendarItem';
 import { CalendarItem, CalendarList, Layout, Time } from './styled';

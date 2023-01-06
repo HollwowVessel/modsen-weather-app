@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from 'store';
 import { getWeekWeather } from 'store/actionCreators';
 import {
   FixedBox,
@@ -9,14 +9,11 @@ import {
   TownHeading,
   TownInputContainer,
 } from './styled';
-
-interface TownInputProps {
-  handlePopup: () => void;
-}
+import { TownInputProps } from './types';
 
 export function TownInput({ handlePopup }: TownInputProps) {
   const [town, setTown] = useState('');
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handlePropagation = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -28,12 +25,11 @@ export function TownInput({ handlePopup }: TownInputProps) {
 
   const handleSearch = (
     e:
-      | React.MouseEventHandler<HTMLButtonElement>
-      | React.KeyboardEventHandler<HTMLInputElement>
-      | any
+      | React.KeyboardEvent<HTMLInputElement>
+      | React.MouseEvent<HTMLButtonElement>
   ) => {
     if (!town.length) return;
-    if (e?.key && e.key !== 'Enter') return;
+    if ('key' in e && e.key !== 'Enter') return;
     dispatch(getWeekWeather(town));
     handlePopup();
   };
