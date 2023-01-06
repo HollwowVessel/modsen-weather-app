@@ -38,3 +38,20 @@ export const parseObjectFromOpenWeather = (obj: DailyWeather) => {
 
   return res;
 };
+
+export const parseEvent = (obj: any) => {
+  const res = [];
+  console.log(obj);
+  for (const item of obj) {
+    const temp = { summary: '', start: '' };
+
+    let { summary, start } = item;
+    console.log(start);
+    start = start.dateTime.substring(11, 19);
+    temp.summary = summary;
+    temp.start = start;
+    res.push(temp);
+  }
+
+  return res;
+};
