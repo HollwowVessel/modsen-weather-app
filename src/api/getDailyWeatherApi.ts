@@ -1,6 +1,9 @@
+import { openWeatherKey } from 'constants/apiKeys';
+import { getDailyWeatherLink } from 'constants/links';
+
 export const getDailyWeatherApi = async (town: string) => {
   const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${town}&units=metric&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}`
+    `${getDailyWeatherLink}/forecast?q=${town}&units=metric&appid=${openWeatherKey}`
   );
 
   return res.json();

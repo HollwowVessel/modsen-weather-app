@@ -6,7 +6,6 @@ import { ThemeProvider } from 'styled-components';
 import { getLocationOfUser } from 'utils/getLocationOfUser';
 import { useAppDispatch } from 'store';
 import { getCityName } from 'store/actionCreators';
-import { apiCalendar } from 'services/googleCalendar';
 
 function App() {
   const [lat, setLat] = useState(0);

@@ -1,12 +1,13 @@
 import { TownInput } from 'components/TownInput';
 
 import { useState } from 'react';
+import { shallowEqual } from 'react-redux';
 import { useAppSelector } from 'store';
 import { weekWeatherSelector } from 'store/selectors';
 import { Country, ShowInput, Town, TownInfoContainer } from './styled';
 
 export default function TownInfo() {
-  const info = useAppSelector(weekWeatherSelector);
+  const info = useAppSelector(weekWeatherSelector, shallowEqual);
   const { address, resolvedAddress } = info;
   const [showPopup, setShowPopup] = useState<boolean>(false);
 

@@ -19,9 +19,9 @@ export const Nav = styled.ul`
   position: absolute;
   display: flex;
   list-style-type: none;
-  top: 10px;
-  left: 20px;
-  margin: 0 0 20px 0;
+  top: ${({ theme }) => theme.spaces.s}px;
+  left: ${({ theme }) => theme.spaces.l}px;
+  margin: 0 0 ${({ theme }) => theme.spaces.l}px 0;
 `;
 
 export const NavItem = styled.li<Pick<NavItemProps, 'background'>>`

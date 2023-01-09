@@ -1,7 +1,7 @@
 import { getDailyWeatherApi } from 'api/getDailyWeatherApi';
 
 import { call, put } from 'redux-saga/effects';
-import { setDailyWeather } from 'store/actionCreators';
+import { catchWeather, setDailyWeather } from 'store/actionCreators';
 
 import { DailyWeather } from 'types/openWeatherTypes';
 import { ActionType } from 'types/reduxTypes';
@@ -15,6 +15,6 @@ export function* getDailyWeatherWorker({ payload }: ActionType) {
 
     yield put(setDailyWeather(data));
   } catch {
-    console.log('Error');
+    yield put(catchWeather());
   }
 }

@@ -1,8 +1,7 @@
 import TodayWeather from 'components/TodayWeather';
 import WeatherList from 'components/WeatherList';
 import { weatherMenuItems } from 'constants/weatherMenuItems';
-import { useEffect, useState } from 'react';
-import { apiCalendar, config } from 'services/googleCalendar';
+import { useState } from 'react';
 import { getBackgroundType } from 'utils/getBackgroundType';
 
 import { Nav, NavItem, WeatherInfo } from './styled';

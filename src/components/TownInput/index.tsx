@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppDispatch } from 'store';
-import { getWeekWeather } from 'store/actionCreators';
+import { getWeather } from 'store/actionCreators';
 import {
   FixedBox,
   Town,
@@ -30,7 +30,9 @@ export function TownInput({ handlePopup }: TownInputProps) {
   ) => {
     if (!town.length) return;
     if ('key' in e && e.key !== 'Enter') return;
-    dispatch(getWeekWeather(town));
+
+    if (/\d/.test(town)) return alert("Town name isn't correct");
+    dispatch(getWeather(town));
     handlePopup();
   };
 

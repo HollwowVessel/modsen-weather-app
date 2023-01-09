@@ -1,4 +1,4 @@
-import { GET_CITY_NAME, GET_WEEK_WEATHER } from 'constants/actionNames';
+import { GET_CITY_NAME, GET_WEATHER } from 'constants/actionNames';
 
 import { call, takeLeading } from 'redux-saga/effects';
 import { ActionType } from 'types/reduxTypes';
@@ -12,6 +12,6 @@ function* getWeather(action: ActionType) {
 }
 
 export function* watchTownInputSaga() {
-  yield takeLeading(GET_WEEK_WEATHER, getWeather);
+  yield takeLeading(GET_WEATHER, getWeather);
   yield takeLeading(GET_CITY_NAME, getCityNameWorker);
 }

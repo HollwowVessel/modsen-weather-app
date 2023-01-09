@@ -21,3 +21,7 @@ export const CalendarItem = styled.li`
 export const CalendarList = styled.ul`
   list-style-type: none;
 `;
+
+export const LoginButton = styled.button``;
+
+export const EventsButton = styled.button``;

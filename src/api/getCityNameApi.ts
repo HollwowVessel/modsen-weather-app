@@ -1,8 +1,10 @@
+import { openWeatherKey } from 'constants/apiKeys';
+import { getCityLink } from 'constants/links';
 import { ReverseGeocodingCoords } from 'types/openWeatherTypes';
 
 export const getCityNameApi = async ({ lat, lon }: ReverseGeocodingCoords) => {
   const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}`
+    `${getCityLink}/weather?lat=${lat}&lon=${lon}&appid=${openWeatherKey}`
   );
 
   return res.json();

@@ -1,6 +1,6 @@
 import { getWeekWeatherApi } from 'api/getWeekWeatherApi';
 import { call, put } from 'redux-saga/effects';
-import { setWeekWeather } from 'store/actionCreators';
+import { catchWeather, setWeekWeather } from 'store/actionCreators';
 import { ActionType } from 'types/reduxTypes';
 import { visualCrossingData } from 'types/visualCrossingTypes';
 
@@ -12,6 +12,6 @@ export function* getWeekWeatherWorker({ payload }: ActionType) {
     );
     yield put(setWeekWeather(data as visualCrossingData));
   } catch {
-    console.log('Error');
+    yield put(catchWeather());
   }
 }

@@ -2,7 +2,11 @@ import { getCityNameApi } from 'api/getCityNameApi';
 import { getDailyWeatherApi } from 'api/getDailyWeatherApi';
 import { getWeekWeatherApi } from 'api/getWeekWeatherApi';
 import { call, put, spawn } from 'redux-saga/effects';
-import { setDailyWeather, setWeekWeather } from 'store/actionCreators';
+import {
+  catchWeather,
+  setDailyWeather,
+  setWeekWeather,
+} from 'store/actionCreators';
 import {
   DailyWeather,
   ReverseGeocodingCoords,
@@ -29,6 +33,6 @@ export function* getCityNameWorker({ payload }: ActionType) {
     yield put(setWeekWeather(visualCrossingRes));
     yield put(setDailyWeather(openWeatherRes));
   } catch {
-    console.log('Error');
+    yield put(catchWeather());
   }
 }
