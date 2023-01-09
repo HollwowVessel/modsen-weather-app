@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { ContainerProps } from 'types/styledComponents';
 
-export const Container = styled.div`
+export const Container = styled.div<Pick<ContainerProps, 'background'>>`
   position: relative;
   margin: ${({ theme }) => theme.spaces.m}px auto;
   box-shadow: 24px 24px 24px 0px #0e1014;
   max-width: ${({ theme }) => theme.width.m}vw;
   min-height: ${({ theme }) => theme.height.i}vh;
-  background: url(${({ theme }) => theme.sunny});
+  background: url(${({ background }) => background});
   background-size: cover;
   background-repeat: no-repeat;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
