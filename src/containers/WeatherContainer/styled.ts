@@ -9,6 +9,11 @@ export const Container = styled.div`
   background: url(${({ theme }) => theme.sunny});
   background-size: cover;
   background-repeat: no-repeat;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    max-width: ${({ theme }) => theme.width.x}vw;
+    margin: ${({ theme }) => theme.spaces.m}px
+      ${({ theme }) => theme.spaces.m}px;
+  }
 `;
 
 export const Layout = styled.section`

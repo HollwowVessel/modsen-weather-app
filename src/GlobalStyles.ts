@@ -14,4 +14,8 @@ export const GlobalStyles = createGlobalStyle`
         background-size: cover;
         background-repeat: no-repeat;
     }
+
+    @media (max-width: 1000px){
+        overflow: initial;
+    }
 `;

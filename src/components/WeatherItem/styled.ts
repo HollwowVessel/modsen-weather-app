@@ -6,6 +6,9 @@ export const DayOfWeek = styled.p`
   border-radius: 48%;
   padding: ${({ theme }) => theme.spaces.s}px;
   font-size: ${({ theme }) => theme.fonts.s}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    font-size: ${({ theme }) => theme.fonts.ss}px;
+  }
 `;
 
 export const DailyIcon = styled.img`
@@ -16,6 +19,9 @@ export const DailyIcon = styled.img`
 export const DailyTemperature = styled.p`
   font-size: ${({ theme }) => theme.fonts.l}px;
   text-align: center;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    font-size: ${({ theme }) => theme.fonts.ss}px;
+  }
 `;
 
 export const ItemContainer = styled.li`
@@ -25,4 +31,7 @@ export const ItemContainer = styled.li`
   justify-content: space-between;
   align-items: center;
   font-size: ${({ theme }) => theme.fonts.l}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts.ss}px;
+  }
 `;

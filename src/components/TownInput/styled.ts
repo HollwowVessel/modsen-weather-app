@@ -48,6 +48,9 @@ export const TownHeading = styled.h3`
   opacity: 1;
   font-size: ${({ theme }) => theme.fonts.xxl}px;
   margin: 0 0 ${({ theme }) => theme.spaces.x}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts.xl}px;
+  }
 `;
 
 export const TownButton = styled.button`

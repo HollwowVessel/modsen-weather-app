@@ -9,6 +9,7 @@ import { dailyEventsSelector, eventErrorSelector } from 'store/selectors';
 import { Event, Gapi, GoogleAuthType } from 'types/eventTypes';
 
 import {
+  ButtonContainer,
   CalendarItem,
   CalendarList,
   EventsButton,
@@ -62,12 +63,14 @@ export function InfoLayout() {
 
   return (
     <Layout>
-      <LoginButton onClick={handleAccount}>
-        {!isSignedIn ? 'Sign in' : 'Sign out'}
-      </LoginButton>
-      {isSignedIn && (
-        <EventsButton onClick={handleClick}>Get Events</EventsButton>
-      )}
+      <ButtonContainer>
+        <LoginButton onClick={handleAccount}>
+          {!isSignedIn ? 'Sign in' : 'Sign out'}
+        </LoginButton>
+        {isSignedIn && (
+          <EventsButton onClick={handleClick}>Get Events</EventsButton>
+        )}
+      </ButtonContainer>
       <WeatherDate />
       <CalendarList>
         {!error

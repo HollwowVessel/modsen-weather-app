@@ -20,9 +20,15 @@ export const Today = styled.h4`
   margin: 0 0 ${({ theme }) => theme.spaces.l}px;
   border: 5px solid #242937;
   border-radius: 48%;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts.s}px;
+  }
 `;
 
 export const TodayTemperature = styled.h3`
   font-size: ${({ theme }) => theme.fonts.xl}px;
   text-align: center;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts.x}px;
+  }
 `;

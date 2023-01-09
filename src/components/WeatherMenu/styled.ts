@@ -13,6 +13,9 @@ export const WeatherInfo = styled.section`
   height: ${({ theme }) => theme.height.l}vh;
   opacity: 0.95;
   background: #31394b;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    flex-direction: column;
+  }
 `;
 
 export const Nav = styled.ul`
@@ -22,10 +25,13 @@ export const Nav = styled.ul`
   top: ${({ theme }) => theme.spaces.s}px;
   left: ${({ theme }) => theme.spaces.l}px;
   margin: 0 0 ${({ theme }) => theme.spaces.l}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    position: initial;
+  }
 `;
 
 export const NavItem = styled.li<Pick<NavItemProps, 'background'>>`
-  padding: 10px;
+  padding: ${({ theme }) => theme.spaces.l}px;
   border: 2px solid #202531;
   background: ${({ background }) => background};
   cursor: pointer;
