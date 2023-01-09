@@ -9,18 +9,18 @@ export const WeatherInfo = styled.section`
   align-items: center;
   position: absolute;
   bottom: 0;
-  width: ${({ theme }) => theme.width.x}%;
-  height: ${({ theme }) => theme.height.l}vh;
+  width: ${({ theme }) => theme.width.at(-3)}%;
+  height: ${({ theme }) => theme.height[2]}vh;
   opacity: 0.95;
   background: #31394b;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     flex-direction: column;
     justify-content: initial;
-    height: 40vh;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.smallMobile}px) {
     padding: 0;
+    height: ${({ theme }) => theme.height[3]}vh;
   }
 `;
 

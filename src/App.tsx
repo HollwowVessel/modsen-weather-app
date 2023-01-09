@@ -8,13 +8,14 @@ import { useAppDispatch, useAppSelector } from 'store';
 import { getCityName } from 'store/actionCreators';
 import { weekWeatherSelector } from 'store/selectors';
 import { shallowEqual } from 'react-redux';
+import { getBackgroundImage } from 'utils/getBackgroundImage';
 
 function App() {
   const { days } = useAppSelector(weekWeatherSelector, shallowEqual);
 
   const { icon } = days[0];
 
-  const type = `https://source.unsplash.com/1600x900/?${icon}`;
+  const type = getBackgroundImage(icon);
 
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);

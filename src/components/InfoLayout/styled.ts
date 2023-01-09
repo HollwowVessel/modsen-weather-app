@@ -12,7 +12,7 @@ export const Time = styled.span`
   margin: ${({ theme }) => theme.spaces.s}px ${({ theme }) => theme.spaces.m}px
     ${({ theme }) => theme.spaces.l}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
-    font-size: ${({ theme }) => theme.fonts.s}px;
+    font-size: ${({ theme }) => theme.fonts[2]}px;
     margin: 0 0 ${({ theme }) => theme.spaces.s}px;
     display: inline-block;
   }
@@ -21,11 +21,11 @@ export const Time = styled.span`
 export const Summary = styled.span``;
 
 export const CalendarItem = styled.li`
-  font-size: ${({ theme }) => theme.fonts.s}px;
+  font-size: ${({ theme }) => theme.fonts[2]}px;
   margin: ${({ theme }) => theme.spaces.m}px 0 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
-    font-size: ${({ theme }) => theme.fonts.ss}px;
+    font-size: ${({ theme }) => theme.fonts[1]}px;
   }
 `;
 
@@ -33,14 +33,13 @@ export const CalendarList = styled.ul`
   list-style-type: none;
   overflow-x: clip;
   overflow-y: auto;
-  height: ${({ theme }) => theme.height.s}vh;
+  height: ${({ theme }) => theme.height[1]}vh;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
     display: flex;
     gap: ${({ theme }) => theme.spaces.l}px;
     overflow-x: auto;
     overflow-y: clip;
-    max-width: ${({ theme }) => theme.width.x}%;
-    height: ${({ theme }) => theme.height.s}vh;
+    max-width: ${({ theme }) => theme.width.at(-3)}%;
   }
 `;
 

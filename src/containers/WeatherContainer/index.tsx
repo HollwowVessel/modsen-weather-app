@@ -3,6 +3,7 @@ import { InfoContainer } from 'containers/InfoContainer';
 import { shallowEqual } from 'react-redux';
 import { useAppSelector } from 'store';
 import { weekWeatherSelector } from 'store/selectors';
+import { getBackgroundImage } from 'utils/getBackgroundImage';
 import { Container } from './styled';
 
 export function WeatherContainer() {
@@ -10,7 +11,7 @@ export function WeatherContainer() {
 
   const { icon } = days[0];
 
-  const type = `https://source.unsplash.com/1600x900/?${icon}`;
+  const type = getBackgroundImage(icon);
   return (
     <Container background={type}>
       <InfoContainer />

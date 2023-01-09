@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Town = styled.h2`
-  font-size: ${({ theme }) => theme.fonts.m}px;
+  font-size: ${({ theme }) => theme.fonts[4]}px;
   margin: 0 0 ${({ theme }) => theme.spaces.m}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
-    font-size: ${({ theme }) => theme.fonts.l}px;
+    font-size: ${({ theme }) => theme.fonts[3]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.smallMobile}px) {
-    font-size: ${({ theme }) => theme.fonts.s}px;
+    font-size: ${({ theme }) => theme.fonts[2]}px;
   }
 `;
 
@@ -16,11 +16,11 @@ export const Country = styled.h3`
   font-size: ${({ theme }) => theme.fonts.l}px;
   margin: 0 0 ${({ theme }) => theme.spaces.m}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
-    font-size: ${({ theme }) => theme.fonts.s}px;
+    font-size: ${({ theme }) => theme.fonts[2]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.smallMobile}px) {
-    font-size: ${({ theme }) => theme.fonts.ss}px;
+    font-size: ${({ theme }) => theme.fonts[1]}px;
   }
 `;
 

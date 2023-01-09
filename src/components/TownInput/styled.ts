@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const FixedBox = styled.div`
   position: fixed;
-  width: ${({ theme }) => theme.width.x}vw;
-  height: ${({ theme }) => theme.width.x}vh;
+  width: ${({ theme }) => theme.width.at(-3)}vw;
+  height: ${({ theme }) => theme.height.at(-3)}vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,8 +16,8 @@ export const FixedBox = styled.div`
 
 export const TownInputContainer = styled.div`
   position: absolute;
-  width: ${({ theme }) => theme.width.xxl}px;
-  height: ${({ theme }) => theme.height.xxl}px;
+  width: ${({ theme }) => theme.width.at(-1)}px;
+  height: ${({ theme }) => theme.height.at(-1)}px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +33,7 @@ export const Town = styled.input`
   outline: none;
   border: none;
   border-radius: 10px;
-  font-size: ${({ theme }) => theme.fonts.s}px;
+  font-size: ${({ theme }) => theme.fonts[1]}px;
   opacity: 0.8;
   transition: 0.8s;
   &:focus,
@@ -46,10 +46,10 @@ export const Town = styled.input`
 
 export const TownHeading = styled.h3`
   opacity: 1;
-  font-size: ${({ theme }) => theme.fonts.xxl}px;
+  font-size: ${({ theme }) => theme.fonts.at(-1)}px;
   margin: 0 0 ${({ theme }) => theme.spaces.x}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
-    font-size: ${({ theme }) => theme.fonts.xl}px;
+    font-size: ${({ theme }) => theme.fonts.at(-2)}px;
   }
 `;
 
@@ -59,7 +59,7 @@ export const TownButton = styled.button`
   border: 2px solid #fff;
   color: #fff;
   border-radius: 10px;
-  font-size: ${({ theme }) => theme.fonts.s}px;
+  font-size: ${({ theme }) => theme.fonts[2]}px;
   background: none;
   opacity: 0.6;
   transition: 0.8s;

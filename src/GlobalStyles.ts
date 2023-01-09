@@ -16,11 +16,13 @@ export const GlobalStyles = createGlobalStyle<
         background:  url(${({ background }) => background}) ;
         background-size: cover;
         background-repeat: no-repeat;
+        height: 140vh;
     }
 
     @media (max-width: 1000px){
         body{
             overflow: initial;
+            height: 100vh;
         }
     }
 `;
