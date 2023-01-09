@@ -17,7 +17,7 @@ export default function TodayWeather() {
   const error = useAppSelector(weatherErrorSelector);
 
   const { icon, temp } = days[0];
-  console.log(icon);
+
   return (
     <TodayWeatherLayout>
       {!error ? (
