@@ -93,7 +93,9 @@ module.exports = {
     'react/require-default-props': 0,
     'no-shadow': 0,
     'import/no-cycle': 0,
-    'react-hooks/exhaustive-deps': ['warn'],
+    'react-hooks/exhaustive-deps': 0,
     'react/react-in-jsx-scope': 0,
+    'default-param-last': 0,
+    'no-alert': 0,
   },
 };
