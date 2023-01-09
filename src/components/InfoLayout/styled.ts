@@ -11,23 +11,36 @@ export const Time = styled.span`
   background: #31394b;
   margin: ${({ theme }) => theme.spaces.s}px ${({ theme }) => theme.spaces.m}px
     ${({ theme }) => theme.spaces.l}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts.s}px;
+    margin: 0 0 ${({ theme }) => theme.spaces.s}px;
+    display: inline-block;
+  }
 `;
+
+export const Summary = styled.span``;
 
 export const CalendarItem = styled.li`
   font-size: ${({ theme }) => theme.fonts.s}px;
   margin: ${({ theme }) => theme.spaces.m}px 0 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts.ss}px;
+  }
 `;
 
 export const CalendarList = styled.ul`
   list-style-type: none;
-  overflow: auto;
+  overflow-x: clip;
+  overflow-y: auto;
   height: ${({ theme }) => theme.height.s}vh;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
     display: flex;
     gap: ${({ theme }) => theme.spaces.l}px;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: clip;
     max-width: ${({ theme }) => theme.width.x}%;
-    height: ${({ theme }) => theme.height.ss}vh;
+    height: ${({ theme }) => theme.height.s}vh;
   }
 `;
 
@@ -37,6 +50,7 @@ export const LoginButton = styled.button`
   color: #fff;
   border-radius: 20%;
   margin: 0 ${({ theme }) => theme.spaces.m}px 0 0;
+  cursor: pointer;
 `;
 
 export const EventsButton = styled.button`
@@ -44,6 +58,7 @@ export const EventsButton = styled.button`
   background: #31394b;
   color: #fff;
   border-radius: 20%;
+  cursor: pointer;
 `;
 
 export const ButtonContainer = styled.div`

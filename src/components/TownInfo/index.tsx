@@ -17,9 +17,11 @@ export default function TownInfo() {
 
   return (
     <TownInfoContainer>
-      <Town>{resolvedAddress?.split(',').at(-1)}</Town>
-      <Country>{address}</Country>
-      <ShowInput onClick={handlePopup}>Change town</ShowInput>
+      <Town data-cy="town">{resolvedAddress?.split(',').at(-1)}</Town>
+      <Country data-cy="address">{address}</Country>
+      <ShowInput onClick={handlePopup} data-cy="change-town-btn">
+        Change town
+      </ShowInput>
       {showPopup && <TownInput handlePopup={handlePopup} />}
     </TownInfoContainer>
   );

@@ -11,8 +11,8 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
     max-width: ${({ theme }) => theme.width.x}vw;
-    margin: ${({ theme }) => theme.spaces.m}px
-      ${({ theme }) => theme.spaces.m}px;
+    margin: 0;
+    min-height: 110vh;
   }
 `;
 
@@ -22,4 +22,8 @@ export const Layout = styled.section`
   justify-content: space-between;
   padding: ${({ theme }) => theme.spaces.xl}px
     ${({ theme }) => theme.spaces.x}px 0 ${({ theme }) => theme.spaces.x}px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    padding: 0;
+  }
 `;

@@ -14,6 +14,15 @@ export const DayOfWeek = styled.p`
 export const DailyIcon = styled.img`
   width: ${({ theme }) => theme.width.x}px;
   max-height: ${({ theme }) => theme.height.l}vh;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    width: ${({ theme }) => theme.width.m}px;
+    max-height: ${({ theme }) => theme.height.ss}vh;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    width: ${({ theme }) => theme.width.l}px;
+    max-height: ${({ theme }) => theme.height.l}px;
+  }
 `;
 
 export const DailyTemperature = styled.p`

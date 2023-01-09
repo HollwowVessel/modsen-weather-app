@@ -16,6 +16,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     @media (max-width: 1000px){
-        overflow: initial;
+        body{
+            overflow: initial;
+            
+        }
     }
 `;

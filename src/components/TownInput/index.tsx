@@ -45,8 +45,9 @@ export function TownInput({ handlePopup }: TownInputProps) {
           maxLength={20}
           onChange={handleTown}
           onKeyUp={handleSearch}
+          data-cy="town-input"
         />
-        <TownButton type="button" onClick={handleSearch}>
+        <TownButton type="button" onClick={handleSearch} data-cy="town-submit">
           Search
         </TownButton>
       </TownInputContainer>

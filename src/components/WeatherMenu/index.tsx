@@ -20,7 +20,9 @@ export function WeatherMenu() {
           <NavItem
             background={getBackgroundType(active, id)}
             onClick={handleActive(id)}
-            key={id}>
+            key={id}
+            data-cy={el}
+          >
             {el}
           </NavItem>
         ))}

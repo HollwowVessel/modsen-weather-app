@@ -15,6 +15,7 @@ import {
   EventsButton,
   Layout,
   LoginButton,
+  Summary,
   Time,
 } from './styled';
 
@@ -76,7 +77,8 @@ export function InfoLayout() {
         {!error
           ? eventItems?.map(({ start, summary }: Event, id: number) => (
               <CalendarItem key={id}>
-                <Time>{start as string}</Time> {summary}
+                <Time>{start as string}</Time>
+                <Summary>{summary}</Summary>
               </CalendarItem>
             ))
           : error}

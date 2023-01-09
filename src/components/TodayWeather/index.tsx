@@ -25,8 +25,10 @@ export default function TodayWeather() {
           <TodayIcon src={getIconTypeVisualCrossing(icon)} />
           <TodayInfo>
             <Today>TODAY</Today>
-            <TodayTemperature>{Math.trunc(temp)}°</TodayTemperature>
-          </TodayInfo>{' '}
+            <TodayTemperature data-cy="today-temp">
+              {Math.trunc(temp)}°
+            </TodayTemperature>
+          </TodayInfo>
         </>
       ) : (
         error

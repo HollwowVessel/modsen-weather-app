@@ -6,6 +6,10 @@ export const Town = styled.h2`
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
     font-size: ${({ theme }) => theme.fonts.l}px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.smallMobile}px) {
+    font-size: ${({ theme }) => theme.fonts.s}px;
+  }
 `;
 
 export const Country = styled.h3`
@@ -13,6 +17,10 @@ export const Country = styled.h3`
   margin: 0 0 ${({ theme }) => theme.spaces.m}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
     font-size: ${({ theme }) => theme.fonts.s}px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.smallMobile}px) {
+    font-size: ${({ theme }) => theme.fonts.ss}px;
   }
 `;
 

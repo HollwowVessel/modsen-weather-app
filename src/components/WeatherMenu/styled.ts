@@ -15,6 +15,12 @@ export const WeatherInfo = styled.section`
   background: #31394b;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     flex-direction: column;
+    justify-content: initial;
+    height: 40vh;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.smallMobile}px) {
+    padding: 0;
   }
 `;
 

@@ -6,14 +6,14 @@ const spaces = {
   x: 48,
   xl: 96,
 };
-const fonts = { ss: 16, s: 24, l: 32, m: 40, x: 48, xl: 56, xxl: 64 };
-const width = { ss: 16, s: 24, l: 32, m: 72, x: 100, xl: 128, xxl: 500 };
+const fonts = { xs: 8, ss: 12, s: 24, l: 32, m: 40, x: 48, xl: 56, xxl: 64 };
+const width = { xs: 8, ss: 12, s: 24, l: 32, m: 72, x: 100, xl: 128, xxl: 500 };
 const height = {
-  ss: 16,
+  ss: 12,
   s: 20,
   l: 32,
   m: 72,
-  i: 80,
+  i: 90,
   x: 100,
   xl: 128,
   xxl: 500,
@@ -26,7 +26,7 @@ const weatherType = {
     'https://media.cnn.com/api/v1/images/stellar/prod/190827143018-01-snowy-weather-file.jpg?q=w_4713,h_2786,x_0,y_0,c_fill',
 };
 
-const breakPoints = { mobile: 700, tablet: 1000 };
+const breakPoints = { smallMobile: 400, mobile: 700, tablet: 1000 };
 
 export const theme = {
   spaces,

@@ -30,7 +30,7 @@ export default function WeatherList({ type }: { type: number }) {
   const timeType = !type ? getDayOfWeek : getTime;
 
   return (
-    <WeatherItems>
+    <WeatherItems data-cy="weather-items">
       {!error
         ? weatherItems
             ?.slice(0, 7)
