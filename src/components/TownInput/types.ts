@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export interface TownInputProps {
-  handlePopup: () => void;
+  setPopup: Dispatch<SetStateAction<boolean>>;
 }

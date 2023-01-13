@@ -9,7 +9,15 @@ const fonts = [8, 12, 24, 32, 40, 48, 56, 64];
 const width = [8, 12, 24, 32, 72, 100, 128, 500];
 const height = [12, 20, 32, 40, 72, 90, 100, 128, 500];
 
-const breakPoints = { smallMobile: 400, mobile: 700, tablet: 1000 };
+const colors = {
+  white: '#fff',
+  grey: '#31394b',
+  darkGrey: '#242937',
+  black: '#111',
+  purple: '#8459dd',
+};
+
+const breakPoints = { mobile: 400, tablet: 900, laptop: 1280 };
 
 export const theme = {
   spaces,
@@ -17,4 +25,5 @@ export const theme = {
   width,
   height,
   breakPoints,
+  colors,
 };

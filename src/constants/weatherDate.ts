@@ -1,5 +1,4 @@
-export const SECOND = 1000;
-export const months = [
+export enum months {
   'December',
   'January',
   'February',
@@ -12,9 +11,9 @@ export const months = [
   'September',
   'October',
   'November',
-];
+}
 
-export const weekDays = [
+export enum weekDays {
   'Sunday',
   'Monday',
   'Tuesday',
@@ -22,4 +21,4 @@ export const weekDays = [
   'Thursday',
   'Friday',
   'Saturday',
-];
+}

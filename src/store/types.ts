@@ -1,11 +1,6 @@
-import { Event } from './eventTypes';
-import { DailyWeather } from './openWeatherTypes';
-import { visualCrossingData } from './visualCrossingTypes';
-
-export type ActionType = {
-  type: string;
-  payload?: unknown;
-};
+import { Event } from '@/types/eventTypes';
+import { DailyWeather } from '@/types/openWeatherTypes';
+import { visualCrossingData } from '@/types/visualCrossingTypes';
 
 export interface WeatherState {
   visualCrossingWeather: visualCrossingData;
@@ -25,3 +20,13 @@ export interface EventState {
 export interface EventStateSelector {
   event: EventState;
 }
+
+export type ActionType = {
+  type: string;
+  payload?: unknown;
+};
+
+export type HelpState = {
+  spinner: boolean;
+  popup: boolean;
+};

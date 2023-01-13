@@ -1,8 +1,9 @@
-import { getWeekWeatherApi } from 'api/getWeekWeatherApi';
 import { call, put } from 'redux-saga/effects';
-import { catchWeather, setWeekWeather } from 'store/actionCreators';
-import { ActionType } from 'types/reduxTypes';
-import { visualCrossingData } from 'types/visualCrossingTypes';
+
+import { catchWeather, setWeekWeather } from '@/actions';
+import { getWeekWeatherApi } from '@/api/getWeekWeatherApi';
+import { ActionType } from '@/store/types';
+import { visualCrossingData } from '@/types/visualCrossingTypes';
 
 export function* getWeekWeatherWorker({ payload }: ActionType) {
   try {

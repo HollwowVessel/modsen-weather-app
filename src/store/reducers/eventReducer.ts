@@ -1,21 +1,20 @@
-import { CATCH_DAILY_EVENTS, SET_DAILY_EVENTS } from 'constants/actionNames';
-import { Event } from 'types/eventTypes';
+import { actionNames } from '@/constants/actionNames';
+import { ActionType, EventState } from '@/store/types';
+import { Event } from '@/types/eventTypes';
+import { parseEvent } from '@/utils/objectParsers';
 
-import { ActionType } from 'types/reduxTypes';
-import { parseEvent } from 'utils/objectParsers';
-
-const initialState = {
+const initialState: EventState = {
   dailyEvents: [],
   error: '',
 };
 
 function eventReducer(state = initialState, { type, payload }: ActionType) {
   switch (type) {
-    case SET_DAILY_EVENTS: {
+    case actionNames.SET_DAILY_EVENTS: {
       const res = parseEvent(payload as Event[]);
       return { ...state, dailyEvents: res, error: '' };
     }
-    case CATCH_DAILY_EVENTS: {
+    case actionNames.CATCH_DAILY_EVENTS: {
       return { ...state, error: 'Something went completely wrong' };
     }
     default:

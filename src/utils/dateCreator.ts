@@ -1,4 +1,4 @@
-import { months, weekDays } from 'constants/weatherDate';
+import { months, weekDays } from '@/constants/weatherDate';
 
 export const dateCreator = () => {
   const date = new Date();

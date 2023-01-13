@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import { GlobalStylesProps } from 'types/styledComponents';
+
+import { GlobalStylesProps } from './types';
 
 export const GlobalStyles = createGlobalStyle<
   Pick<GlobalStylesProps, 'background'>
@@ -11,18 +12,20 @@ export const GlobalStyles = createGlobalStyle<
     }
 
     body{
-        overflow: hidden;
+        
         color: #fff;
         background:  url(${({ background }) => background}) ;
         background-size: cover;
         background-repeat: no-repeat;
-        height: 140vh;
+
     }
 
-    @media (max-width: 1000px){
+    
+    @media (max-width: 1280px  ){
         body{
             overflow: initial;
-            height: 100vh;
+            
         }
     }
+
 `;
