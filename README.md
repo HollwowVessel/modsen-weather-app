@@ -15,4 +15,4 @@ It works as usual. On the screen you have a button with click on which you will 
 
 ## To open app:
 
-- Just use a link
+- Just use a link https://luminous-pika-9ecb48.netlify.app
