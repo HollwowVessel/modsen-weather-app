@@ -1,9 +1,9 @@
-import { Event } from 'types/eventTypes';
-import { DailyTown, DailyWeather, ListItem } from 'types/openWeatherTypes';
+import { Event } from '@/types/eventTypes';
+import { DailyTown, DailyWeather, ListItem } from '@/types/openWeatherTypes';
 import {
   visualCrossingData,
   visualCrossingDay,
-} from 'types/visualCrossingTypes';
+} from '@/types/visualCrossingTypes';
 
 export const parseObjectFromVisualCrossing = (
   obj: visualCrossingData
@@ -15,7 +15,11 @@ export const parseObjectFromVisualCrossing = (
     const tempObj: visualCrossingDay = { temp, icon };
     resDays.push(tempObj);
   }
-  const res = { resolvedAddress, address, days: resDays };
+  const res: visualCrossingData = {
+    resolvedAddress: String(resolvedAddress.split(',').at(-1)),
+    address,
+    days: resDays?.slice(0, 7),
+  };
   return res;
 };
 
@@ -33,7 +37,7 @@ export const parseObjectFromOpenWeather = (obj: DailyWeather) => {
     resList.push(tempItem);
   }
   const res: DailyWeather = { days: [], name: '' };
-  res.days = resList;
+  res.days = resList?.slice(0, 7);
   res.name = town;
 
   return res;

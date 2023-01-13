@@ -1,7 +1,9 @@
-export const getCityLink = 'https://api.openweathermap.org/data/2.5';
-export const getWeekWeatherLink =
-  'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline';
-export const getDailyWeatherLink = 'https://api.openweathermap.org/data/2.5';
-export const googleCalendarLink = 'https://www.googleapis.com/auth/calendar';
-export const googleDiscoveryDocksLink =
-  'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
+export const getCityLink = process.env.REACT_APP_OPEN_WEATHER_LINK as string;
+export const getWeekWeatherLink = process.env
+  .REACT_APP_VISUAL_CROSSING_LINK as string;
+export const getDailyWeatherLink = process.env
+  .REACT_APP_OPEN_WEATHER_LINK as string;
+export const googleCalendarLink = process.env
+  .REACT_APP_GOOGLE_CALENDAR_LINK as string;
+export const googleDiscoveryDocksLink = process.env
+  .REACT_APP_GOOGLE_DISCOVERY_DOCS_LINK as string;

@@ -1,20 +1,29 @@
-import { WeatherMenu } from 'components/WeatherMenu';
-import { InfoContainer } from 'containers/InfoContainer';
+import { useEffect, useState } from 'react';
 import { shallowEqual } from 'react-redux';
-import { useAppSelector } from 'store';
-import { weekWeatherSelector } from 'store/selectors';
-import { Container } from './styled';
+
+import { WeatherMenu } from '@/components/WeatherMenu';
+import { InfoContainer } from '@/containers/InfoContainer';
+import { useAppSelector } from '@/store';
+import { sourceTypeSelector } from '@/store/selectors';
+
+import { Container, Spinner, SpinnerContainer } from './styled';
 
 export function WeatherContainer() {
-  const { days } = useAppSelector(weekWeatherSelector, shallowEqual);
+  const icon = useAppSelector(sourceTypeSelector, shallowEqual);
+  const [loading, setLoading] = useState(false);
 
-  const { icon } = days[0];
+  useEffect(() => {
+    setTimeout(() => setLoading(true), 1000);
+  }, []);
 
-  const type = `https://source.unsplash.com/1600x900/?${icon}`;
-  return (
-    <Container background={type}>
+  return loading ? (
+    <Container background={icon}>
       <InfoContainer />
       <WeatherMenu />
     </Container>
+  ) : (
+    <SpinnerContainer>
+      <Spinner />
+    </SpinnerContainer>
   );
 }

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, KeyboardEvent, MouseEvent, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useAppDispatch } from 'store';
-import { getWeather } from 'store/actionCreators';
+
+import { getWeather } from '@/actions';
+import { useAppDispatch } from '@/store';
+
 import {
   FixedBox,
   Town,
@@ -11,33 +13,34 @@ import {
 } from './styled';
 import { TownInputProps } from './types';
 
-export function TownInput({ handlePopup }: TownInputProps) {
+export function TownInput({ setPopup }: TownInputProps) {
   const [town, setTown] = useState('');
   const dispatch = useAppDispatch();
 
-  const handlePropagation = (e: React.MouseEvent) => {
+  const handlePropagation = (e: MouseEvent) => {
     e.stopPropagation();
   };
 
-  const handleTown = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTown = (e: ChangeEvent<HTMLInputElement>) => {
     setTown(e.target.value);
   };
 
+  const closePopup = () => {
+    setPopup((prev) => !prev);
+  };
+
   const handleSearch = (
-    e:
-      | React.KeyboardEvent<HTMLInputElement>
-      | React.MouseEvent<HTMLButtonElement>
+    e: KeyboardEvent<HTMLInputElement> | MouseEvent<HTMLButtonElement>
   ) => {
     if (!town.length) return;
     if ('key' in e && e.key !== 'Enter') return;
 
-    if (/\d/.test(town)) return alert("Town name isn't correct");
     dispatch(getWeather(town));
-    handlePopup();
+    closePopup();
   };
 
   return createPortal(
-    <FixedBox onClick={handlePopup}>
+    <FixedBox onClick={closePopup}>
       <TownInputContainer onClick={handlePropagation}>
         <TownHeading>Input a town!</TownHeading>
         <Town

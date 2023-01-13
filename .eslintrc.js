@@ -4,13 +4,13 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'airbnb',
     'airbnb/hooks',
     'prettier',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
   ],
+  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'import', 'prettier'],
   settings: {
     'import/resolver': {
       node: {
@@ -28,14 +28,14 @@ module.exports = {
       },
       alias: {
         map: [
-          ['components', './components'],
-          ['containers', './containers'],
-          ['pages', './pages'],
-          ['assets', './assets'],
-          ['utils', './utils'],
-          ['store', './store'],
-          ['constants', './constants'],
-          ['services', './services'],
+          ['@/components', './components'],
+          ['@/containers', './containers'],
+          ['@/pages', './pages'],
+          ['@/assets', './assets'],
+          ['@/utils', './utils'],
+          ['@/store', './store'],
+          ['@/constants', './constants'],
+          ['@/services', './services'],
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
@@ -97,5 +97,9 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'default-param-last': 0,
     'no-alert': 0,
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    'react/jsx-filename-extension': 0,
+    'import/extensions': 0,
   },
 };

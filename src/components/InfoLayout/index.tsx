@@ -1,12 +1,12 @@
-import { WeatherDate } from 'components/WeatherDate';
-
 import { useEffect, useState } from 'react';
 import { shallowEqual } from 'react-redux';
-import { apiCalendar, config } from 'services/googleCalendar';
-import { useAppDispatch, useAppSelector } from 'store';
-import { getDailyEvents } from 'store/actionCreators';
-import { dailyEventsSelector, eventErrorSelector } from 'store/selectors';
-import { Event, Gapi, GoogleAuthType } from 'types/eventTypes';
+
+import { getDailyEvents } from '@/actions';
+import { apiCalendar, config } from '@/api/googleCalendar';
+import { WeatherDate } from '@/components/WeatherDate';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { dailyEventsSelector } from '@/store/selectors';
+import { GoogleAuthType } from '@/types/eventTypes';
 
 import {
   ButtonContainer,
@@ -23,38 +23,27 @@ export function InfoLayout() {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   const dispatch = useAppDispatch();
-  const eventItems = useAppSelector(dailyEventsSelector, shallowEqual) || [];
-
-  const error = useAppSelector(eventErrorSelector);
+  const { eventItems, error } = useAppSelector(
+    dailyEventsSelector,
+    shallowEqual
+  );
 
   const handleAccount = () => {
-    const handleSignIn = () => {
-      apiCalendar.handleAuthClick();
-      setIsSignedIn(true);
-    };
-
-    const handleSignOut = () => {
+    if (isSignedIn) {
       apiCalendar.handleSignoutClick();
       setIsSignedIn(false);
-    };
-
-    if (isSignedIn) {
-      handleSignOut();
     } else {
-      handleSignIn();
+      apiCalendar.handleAuthClick();
+      setIsSignedIn(true);
     }
   };
 
   useEffect(() => {
     apiCalendar.onLoadCallback = () => {
-      if ('gapi' in window && window.gapi) {
-        (window.gapi as Gapi).auth2.init(config).then(() => {
-          if ('gapi' in window && window.gapi) {
-            const GoogleAuth = (window.gapi as Gapi).auth2.getAuthInstance();
-            setIsSignedIn((GoogleAuth as GoogleAuthType).isSignedIn.get());
-          }
-        });
-      }
+      window.gapi.auth2.init(config).then(() => {
+        const GoogleAuth = window.gapi.auth2.getAuthInstance();
+        setIsSignedIn((GoogleAuth as GoogleAuthType).isSignedIn.get());
+      });
     };
   });
 
@@ -75,7 +64,7 @@ export function InfoLayout() {
       <WeatherDate />
       <CalendarList>
         {!error
-          ? eventItems?.map(({ start, summary }: Event, id: number) => (
+          ? eventItems?.map(({ start, summary }, id) => (
               <CalendarItem key={id}>
                 <Time>{start as string}</Time>
                 <Summary>{summary}</Summary>

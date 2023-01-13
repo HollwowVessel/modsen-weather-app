@@ -2,7 +2,7 @@ import { DailyWeather } from 'types/openWeatherTypes';
 import { visualCrossingData } from 'types/visualCrossingTypes';
 
 export const mockWeatherDaily: visualCrossingData = {
-  resolvedAddress: 'Витебск, Витебская область, Беларусь',
+  resolvedAddress: 'Беларусь',
   address: 'Витебск',
   days: [
     {
@@ -27,42 +27,6 @@ export const mockWeatherDaily: visualCrossingData = {
     },
     {
       temp: -5.4,
-      icon: 'snow',
-    },
-    {
-      temp: -4.3,
-      icon: 'snow',
-    },
-    {
-      temp: -4.9,
-      icon: 'snow',
-    },
-    {
-      temp: -4.9,
-      icon: 'snow',
-    },
-    {
-      temp: 0.8,
-      icon: 'cloudy',
-    },
-    {
-      temp: -2,
-      icon: 'snow',
-    },
-    {
-      temp: -5.2,
-      icon: 'snow',
-    },
-    {
-      temp: -7.8,
-      icon: 'snow',
-    },
-    {
-      temp: -9.6,
-      icon: 'snow',
-    },
-    {
-      temp: -11.9,
       icon: 'snow',
     },
   ],

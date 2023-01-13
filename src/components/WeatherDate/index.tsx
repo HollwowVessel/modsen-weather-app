@@ -1,20 +1,18 @@
-import { SECOND } from 'constants/weatherDate';
-import { useEffect, useRef, useState } from 'react';
-import { dateCreator } from 'utils/dateCreator';
-import { timeCreator } from 'utils/timeCreator';
+import { useEffect, useMemo, useState } from 'react';
+
+import { dateCreator } from '@/utils/dateCreator';
+import { timeCreator } from '@/utils/timeCreator';
+
 import { DateContainer, DateInfo, TimeInfo } from './styled';
 
 export function WeatherDate() {
-  const [time, setTime] = useState<string>(timeCreator());
-  const [date] = useState<string>(dateCreator());
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const [time, setTime] = useState(() => timeCreator());
+  const date = useMemo(() => dateCreator(), []);
 
   useEffect(() => {
-    timerRef.current = setInterval(() => setTime(timeCreator()), SECOND);
+    const interval = setInterval(() => setTime(timeCreator()), 1000);
 
-    return () => {
-      clearInterval(timerRef.current as NodeJS.Timeout);
-    };
+    return () => clearInterval(interval as NodeJS.Timeout);
   }, []);
 
   return (

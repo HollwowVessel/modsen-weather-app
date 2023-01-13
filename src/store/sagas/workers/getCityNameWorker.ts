@@ -1,19 +1,16 @@
-import { getCityNameApi } from 'api/getCityNameApi';
-import { getDailyWeatherApi } from 'api/getDailyWeatherApi';
-import { getWeekWeatherApi } from 'api/getWeekWeatherApi';
-import { call, put, spawn } from 'redux-saga/effects';
-import {
-  catchWeather,
-  setDailyWeather,
-  setWeekWeather,
-} from 'store/actionCreators';
+import { call, put } from 'redux-saga/effects';
+
+import { catchWeather, setDailyWeather, setWeekWeather } from '@/actions';
+import { getCityNameApi } from '@/api/getCityNameApi';
+import { getDailyWeatherApi } from '@/api/getDailyWeatherApi';
+import { getWeekWeatherApi } from '@/api/getWeekWeatherApi';
+import { ActionType } from '@/store/types';
 import {
   DailyWeather,
   ReverseGeocodingCoords,
   ReverseGeocodingType,
-} from 'types/openWeatherTypes';
-import { ActionType } from 'types/reduxTypes';
-import { visualCrossingData } from 'types/visualCrossingTypes';
+} from '@/types/openWeatherTypes';
+import { visualCrossingData } from '@/types/visualCrossingTypes';
 
 export function* getCityNameWorker({ payload }: ActionType) {
   try {

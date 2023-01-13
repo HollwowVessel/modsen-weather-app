@@ -17,12 +17,17 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "components": ["./components"],
-      "containers": ["./containers"],
-      "assets": ["./assets"],
-      "utils": ["./utils"],
-      "store": ["./store"],
-      "constants": ["./constants"]
+      "@/components/*": ["components/*"],
+      "@/containers/*": ["containers/*"],
+      "@/assets/*": ["assets/*"],
+      "@/utils/*": ["utils/*"],
+      "@/store/*": ["store/*"],
+      "@/store": ["store/index"],
+      "@/constants/*": ["constants/*"],
+      "@/api/*": ["api/*"],
+      "@/types/*": ["types/*"],
+      "@/sagas/*": ["store/sagas/*"],
+      "@/actions": ["actions/index"]
     }
   },
   "include": ["src"]

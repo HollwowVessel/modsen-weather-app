@@ -6,12 +6,30 @@ export const WeatherItems = styled.ul`
   list-style-type: none;
   overflow-y: clip;
   overflow-x: auto;
-  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
-    max-width: ${({ theme }) => theme.height.x}%;
-    padding: 0 0 ${({ theme }) => theme.spaces.x}px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakPoints.smallMobile}px) {
-    height: 200px;
+  &::-webkit-scrollbar-track {
+    border-radius: 20px;
+
+    background: ${({ theme }) => theme.colors.black};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: ${({ theme }) => theme.colors.purple};
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    border-radius: 20px;
+    opacity: 0.8;
+    background: ${({ theme }) => theme.colors.purple};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
+    max-width: ${({ theme }) => theme.width.at(-3)}%;
+    padding: 0 0 ${({ theme }) => theme.spaces.x}px;
   }
 `;

@@ -1,4 +1,4 @@
-import { apiCalendar } from 'services/googleCalendar';
+import { apiCalendar } from './googleCalendar';
 
 export const getEventsApi = async () => {
   const today = new Date(new Date().setUTCHours(0, 0, 0, 0));

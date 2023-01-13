@@ -1,7 +1,8 @@
 import { shallowEqual } from 'react-redux';
-import { useAppSelector } from 'store';
-import { weatherErrorSelector, weekWeatherSelector } from 'store/selectors';
-import { getIconTypeVisualCrossing } from 'utils/getIconType';
+
+import { useAppSelector } from '@/store';
+import { todaySelector, weatherErrorSelector } from '@/store/selectors';
+import { getIconTypeVisualCrossing } from '@/utils/getIconType';
 
 import {
   Today,
@@ -11,18 +12,20 @@ import {
   TodayWeatherLayout,
 } from './styled';
 
-export default function TodayWeather() {
-  const { days } = useAppSelector(weekWeatherSelector, shallowEqual);
+export function TodayWeather() {
+  const { icon, temp } = useAppSelector(todaySelector, shallowEqual);
 
   const error = useAppSelector(weatherErrorSelector);
 
-  const { icon, temp } = days[0];
-  console.log(icon);
   return (
     <TodayWeatherLayout>
       {!error ? (
         <>
-          <TodayIcon src={getIconTypeVisualCrossing(icon)} />
+          <TodayIcon
+            src={getIconTypeVisualCrossing(icon)}
+            alt={icon}
+            title={icon}
+          />
           <TodayInfo>
             <Today>TODAY</Today>
             <TodayTemperature data-cy="today-temp">

@@ -1,10 +1,10 @@
-import TodayWeather from 'components/TodayWeather';
-import WeatherList from 'components/WeatherList';
-import { weatherMenuItems } from 'constants/weatherMenuItems';
 import { useState } from 'react';
-import { getBackgroundType } from 'utils/getBackgroundType';
 
-import { Nav, NavItem, WeatherInfo } from './styled';
+import { TodayWeather } from '@/components/TodayWeather';
+import { WeatherList } from '@/components/WeatherList';
+import { weatherMenuItems } from '@/constants/weatherMenuItems';
+
+import { Item, TimeType, WeatherInfo } from './styled';
 
 export function WeatherMenu() {
   const [active, setActive] = useState(0);
@@ -15,18 +15,18 @@ export function WeatherMenu() {
 
   return (
     <WeatherInfo>
-      <Nav>
-        {weatherMenuItems.map((el: string, id: number) => (
-          <NavItem
-            background={getBackgroundType(active, id)}
+      <TimeType>
+        {weatherMenuItems.map((el, id) => (
+          <Item
+            background={active === id ? '#000' : ''}
             onClick={handleActive(id)}
             key={id}
             data-cy={el}
           >
             {el}
-          </NavItem>
+          </Item>
         ))}
-      </Nav>
+      </TimeType>
       <TodayWeather />
       <WeatherList type={active} />
     </WeatherInfo>

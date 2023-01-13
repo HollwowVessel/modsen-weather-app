@@ -1,17 +1,17 @@
-import { GET_CITY_NAME, GET_WEATHER } from 'constants/actionNames';
-
+import { actionNames } from 'constants/actionNames';
 import { call, takeLeading } from 'redux-saga/effects';
-import { ActionType } from 'types/reduxTypes';
-import { getCityNameWorker } from '../workers/getCityNameWorker';
-import { getDailyWeatherWorker } from '../workers/getDailyWeatherWorker';
-import { getWeekWeatherWorker } from '../workers/getWeekWeatherWorker';
+
+import { getCityNameWorker } from '@/store/sagas/workers/getCityNameWorker';
+import { getDailyWeatherWorker } from '@/store/sagas/workers/getDailyWeatherWorker';
+import { getWeekWeatherWorker } from '@/store/sagas/workers/getWeekWeatherWorker';
+import { ActionType } from '@/store/types';
 
 function* getWeather(action: ActionType) {
-  yield call(getWeekWeatherWorker, action as ActionType);
-  yield call(getDailyWeatherWorker, action as ActionType);
+  yield call(getWeekWeatherWorker, action);
+  yield call(getDailyWeatherWorker, action);
 }
 
 export function* watchTownInputSaga() {
-  yield takeLeading(GET_WEATHER, getWeather);
-  yield takeLeading(GET_CITY_NAME, getCityNameWorker);
+  yield takeLeading(actionNames.GET_WEATHER, getWeather);
+  yield takeLeading(actionNames.GET_CITY_NAME, getCityNameWorker);
 }
