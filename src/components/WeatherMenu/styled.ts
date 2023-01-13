@@ -35,16 +35,14 @@ export const WeatherInfo = styled.section`
   }
 `;
 
-export const TimeType = styled.ul`
+export const TimeType = styled.div`
   position: absolute;
   display: flex;
-  list-style-type: none;
   top: ${({ theme }) => theme.spaces.s}px;
   left: ${({ theme }) => theme.spaces.l}px;
   margin: 0 0 ${({ theme }) => theme.spaces.l}px 0;
 
   @media (max-height: ${({ theme }) => theme.breakPoints.tablet}px) {
-    flex-direction: column;
     justify-content: initial;
     position: initial;
   }
@@ -54,9 +52,10 @@ export const TimeType = styled.ul`
   }
 `;
 
-export const Item = styled.li<Pick<NavItemProps, 'background'>>`
+export const Item = styled.button<Pick<NavItemProps, 'background'>>`
   padding: ${({ theme }) => theme.spaces.l}px;
-  border: 2px solid #202531;
+  border: 2px solid ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.lightGrey};
   background: ${({ background }) => background};
   cursor: pointer;
 `;
