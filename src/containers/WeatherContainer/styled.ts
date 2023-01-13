@@ -33,7 +33,7 @@ export const SpinnerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: ${({ theme }) => theme.height.at(-3)}vh;
   @keyframes spinner {
     0% {
       transform: rotate(0deg);

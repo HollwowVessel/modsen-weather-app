@@ -15,8 +15,9 @@ import {
 import { getTime } from '@/utils/getTime';
 
 import { WeatherItems } from './styled';
+import { WeatherListProps } from './types';
 
-export function WeatherList({ type }: { type: number }) {
+export function WeatherList({ type }: WeatherListProps) {
   const selector = !type ? weekWeatherDaysSelector : dailyWeatherDaysSelector;
 
   const getIconType = !type
