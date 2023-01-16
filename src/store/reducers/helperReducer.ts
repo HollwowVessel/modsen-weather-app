@@ -2,17 +2,19 @@ import { actionNames } from '@/constants/actionNames';
 import { ActionType, HelpState } from '@/store/types';
 
 const initialState: HelpState = {
-  spinner: false,
-  popup: false,
+  loading: false,
+  url: '',
 };
 
-function helperReducer(state = initialState, { type }: ActionType) {
+function helperReducer(state = initialState, { type, payload }: ActionType) {
   switch (type) {
-    case actionNames.SET_SPINNER: {
-      console.log(state.spinner);
-      return { ...state, spinner: !state.spinner };
+    case actionNames.SET_LOAD: {
+      return { ...state, loading: true };
     }
-
+    case actionNames.SET_IMAGE: {
+      payload = URL.createObjectURL(payload as Blob);
+      return { url: payload, loading: false };
+    }
     default:
       return state;
   }

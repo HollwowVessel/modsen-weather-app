@@ -15,10 +15,3 @@ export interface GoogleAuthType {
     get: () => boolean;
   };
 }
-
-export interface Gapi {
-  auth2: {
-    init: (obj: object) => Promise<null>;
-    getAuthInstance: () => GoogleAuthType;
-  };
-}

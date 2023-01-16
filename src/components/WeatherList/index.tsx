@@ -1,12 +1,12 @@
 import { shallowEqual } from 'react-redux';
+
+import { WeatherItem } from '@/components/WeatherItem';
+import { useAppSelector } from '@/store';
 import {
   dailyWeatherDaysSelector,
   weatherErrorSelector,
   weekWeatherDaysSelector,
-} from 'store/selectors';
-
-import { WeatherItem } from '@/components/WeatherItem';
-import { useAppSelector } from '@/store';
+} from '@/store/selectors';
 import { getDayOfWeek } from '@/utils/getDayOfWeek';
 import {
   getIconTypeOpenWeather,

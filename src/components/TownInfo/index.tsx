@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { shallowEqual } from 'react-redux';
 
 import { TownInput } from '@/components/TownInput';
@@ -15,9 +15,9 @@ export function TownInfo() {
 
   const [showPopup, setShowPopup] = useState(false);
 
-  const handlePopup = () => {
+  const handlePopup = useCallback(() => {
     setShowPopup((prev) => !prev);
-  };
+  }, []);
 
   return (
     <TownInfoContainer>
@@ -26,7 +26,7 @@ export function TownInfo() {
       <ShowInput onClick={handlePopup} data-cy="change-town-btn">
         Change town
       </ShowInput>
-      {showPopup && <TownInput setPopup={setShowPopup} />}
+      {showPopup && <TownInput handlePopup={handlePopup} />}
     </TownInfoContainer>
   );
 }

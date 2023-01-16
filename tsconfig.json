@@ -27,7 +27,9 @@
       "@/api/*": ["api/*"],
       "@/types/*": ["types/*"],
       "@/sagas/*": ["store/sagas/*"],
-      "@/actions": ["actions/index"]
+      "@/actions": ["actions/index"],
+      "@/hooks/*": ["hooks/*"],
+      "@/theme/*": ["theme/*"]
     }
   },
   "include": ["src"]

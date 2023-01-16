@@ -1,38 +1,35 @@
-import { useEffect, useState } from 'react';
 import { shallowEqual } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
-import { getCityName } from '@/actions';
-import { theme } from '@/constants/theme';
 import { WeatherContainer } from '@/containers/WeatherContainer';
-import { useAppDispatch, useAppSelector } from '@/store';
-import { sourceTypeSelector } from '@/store/selectors';
-import { ReverseGeocodingCoords } from '@/types/openWeatherTypes';
-import { getLocationOfUser } from '@/utils/getLocationOfUser';
+import { useGetLocation } from '@/hooks/useGetLocation';
+import { useAppSelector } from '@/store';
+import { GlobalStyles } from '@/theme/GlobalStyles';
+import { theme } from '@/theme/theme';
 
-import { GlobalStyles } from './GlobalStyles';
+import { Spinner, SpinnerContainer } from './styled';
 
 export function App() {
-  const type = useAppSelector(sourceTypeSelector, shallowEqual);
+  const { loading, url } = useAppSelector(
+    (state) => state.helper,
+    shallowEqual
+  );
 
-  const [coords, setCoords] = useState<ReverseGeocodingCoords>({
-    lat: 0,
-    lon: 0,
-  });
+  useGetLocation();
 
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    getLocationOfUser(setCoords);
-    const { lat, lon } = coords;
-    if (lat || lon) {
-      dispatch(getCityName({ lat, lon }));
-    }
-  }, [coords.lat, coords.lon]);
+  if (loading) {
+    return (
+      <ThemeProvider theme={theme}>
+        <SpinnerContainer>
+          <Spinner />
+        </SpinnerContainer>
+      </ThemeProvider>
+    );
+  }
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles background={type} />
+      <GlobalStyles background={url} />
       <WeatherContainer />
     </ThemeProvider>
   );

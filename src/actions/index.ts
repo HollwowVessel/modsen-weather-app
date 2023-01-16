@@ -1,5 +1,4 @@
-import { actionNames } from 'constants/actionNames';
-
+import { actionNames } from '@/constants/actionNames';
 import { Event } from '@/types/eventTypes';
 import { DailyWeather } from '@/types/openWeatherTypes';
 import { visualCrossingData } from '@/types/visualCrossingTypes';
@@ -37,4 +36,13 @@ export const setDailyEvents = (data: Event) => ({
 
 export const catchDailyEvents = () => ({
   type: actionNames.CATCH_DAILY_EVENTS,
+});
+
+export const setImage = (img: string) => ({
+  type: actionNames.SET_IMAGE,
+  payload: img,
+});
+
+export const setLoad = () => ({
+  type: actionNames.SET_LOAD,
 });

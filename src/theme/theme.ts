@@ -15,6 +15,7 @@ const colors = {
   darkGrey: '#242937',
   black: '#111',
   purple: '#8459dd',
+  lightGrey: '#AAA',
 };
 
 const breakPoints = { mobile: 400, tablet: 900, laptop: 1280 };
