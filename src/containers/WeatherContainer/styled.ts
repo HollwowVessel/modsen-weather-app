@@ -5,12 +5,10 @@ import { WeatherContainerProps } from './types';
 export const Container = styled.div<Pick<WeatherContainerProps, 'background'>>`
   position: relative;
   margin: ${({ theme }) => theme.spaces.m}px auto;
-  box-shadow: 24px 24px 24px 0px #0e1014;
+  box-shadow: 8px 16px 24px 24px ${({ theme }) => theme.colors.black};
   max-width: ${({ theme }) => theme.width[4]}vw;
   min-height: ${({ theme }) => theme.height[5]}vh;
-  background: url(${({ background }) => background});
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: blur;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     max-width: ${({ theme }) => theme.width.at(-3)}vw;
     margin: 0;
@@ -27,28 +25,4 @@ export const Layout = styled.section`
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     padding: 0;
   }
-`;
-
-export const SpinnerContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: ${({ theme }) => theme.height.at(-3)}vh;
-  @keyframes spinner {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`;
-
-export const Spinner = styled.div`
-  width: ${({ theme }) => theme.width.at(-2)}px;
-  height: ${({ theme }) => theme.height.at(-2)}px;
-  border: 10px solid ${({ theme }) => theme.colors.black};
-  border-top: 10px solid ${({ theme }) => theme.colors.purple};
-  border-radius: 50%;
-  animation: spinner 1s linear infinite;
 `;

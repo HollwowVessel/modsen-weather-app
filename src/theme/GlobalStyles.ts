@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { GlobalStylesProps } from './types';
+import { GlobalStylesProps } from '@/components/App/types';
 
 export const GlobalStyles = createGlobalStyle<
   Pick<GlobalStylesProps, 'background'>

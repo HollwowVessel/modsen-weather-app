@@ -1,7 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, MouseEvent, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { getWeather } from '@/actions';
+import { getWeather, setLoad } from '@/actions';
 import { useAppDispatch } from '@/store';
 
 import {
@@ -13,7 +13,7 @@ import {
 } from './styled';
 import { TownInputProps } from './types';
 
-export function TownInput({ setPopup }: TownInputProps) {
+export function TownInput({ handlePopup }: TownInputProps) {
   const [town, setTown] = useState('');
   const dispatch = useAppDispatch();
 
@@ -25,10 +25,6 @@ export function TownInput({ setPopup }: TownInputProps) {
     setTown(e.target.value);
   };
 
-  const closePopup = () => {
-    setPopup((prev) => !prev);
-  };
-
   const handleSearch = (
     e: KeyboardEvent<HTMLInputElement> | MouseEvent<HTMLButtonElement>
   ) => {
@@ -36,11 +32,12 @@ export function TownInput({ setPopup }: TownInputProps) {
     if ('key' in e && e.key !== 'Enter') return;
 
     dispatch(getWeather(town));
-    closePopup();
+    dispatch(setLoad());
+    handlePopup();
   };
 
   return createPortal(
-    <FixedBox onClick={closePopup}>
+    <FixedBox onClick={handlePopup}>
       <TownInputContainer onClick={handlePropagation}>
         <TownHeading>Input a town!</TownHeading>
         <Town

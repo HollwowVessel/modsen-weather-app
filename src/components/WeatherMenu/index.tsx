@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { TodayWeather } from '@/components/TodayWeather';
 import { WeatherList } from '@/components/WeatherList';
 import { weatherMenuItems } from '@/constants/weatherMenuItems';
+import { theme } from '@/theme/theme';
 
 import { Item, TimeType, WeatherInfo } from './styled';
 
@@ -18,7 +19,7 @@ export function WeatherMenu() {
       <TimeType>
         {weatherMenuItems.map((el, id) => (
           <Item
-            background={active === id ? '#000' : ''}
+            background={id === active ? theme.colors.black : 'transparent'}
             onClick={handleActive(id)}
             key={id}
             data-cy={el}

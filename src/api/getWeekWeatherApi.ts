@@ -1,5 +1,5 @@
-import { visualCrossingKey } from 'constants/apiKeys';
-import { getWeekWeatherLink } from 'constants/links';
+import { visualCrossingKey } from '@/constants/apiKeys';
+import { getWeekWeatherLink } from '@/constants/links';
 
 export const getWeekWeatherApi = async (town: string) => {
   const res = await fetch(

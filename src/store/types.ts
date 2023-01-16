@@ -27,6 +27,6 @@ export type ActionType = {
 };
 
 export type HelpState = {
-  spinner: boolean;
-  popup: boolean;
+  loading: boolean;
+  url: string;
 };
